@@ -4,14 +4,15 @@ import Header from './Header'
 import Search from './Search'
 import ContentList from './ContentList'
 
+
 function App() {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("girls")
 
   return (
     <div>
       <Header />
-      <Search setSearchTerm={setSearchTerm}/>
-      <ContentList searchTerm={searchTerm}/>
+      <Search setSearchTerm={setSearchTerm} />
+      <ContentList searchTerm={searchTerm} />
     </div>
   )
 }
