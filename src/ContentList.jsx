@@ -15,7 +15,6 @@ function ContentList({ searchTerm }) {
         setIsError(false);
 
         fetch(`https://api.tvmaze.com/search/shows?q=${searchTerm}`).then((response) => {
-            console.log(response)
             if (response.status < 200 || response.status > 299) {
 
                 return Promise.reject({ message: 'Something went wrong' })
