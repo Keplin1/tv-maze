@@ -24,11 +24,11 @@ function MovieCard({ movie }) {
 
     return (
 
-        <Card sx={{ maxWidth: 345 }}>
+        <Card>
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="200"
+                    height="400"
                     image={movie.show.image?.medium}
                     alt={movie.show.name}
                 />

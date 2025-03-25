@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 10px;
   padding: 10px;
   box-sizing: border-box;
@@ -21,9 +21,10 @@ header {
 .search {
   outline: 2px solid green;
 }
+
 .content-list {
   outline: 2px solid blue;
 }
 .content-card {
   outline: 2px solid yellow;
-}
+} */

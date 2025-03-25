@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Box, TextField, Button } from '@mui/material';
 
 function Search({ setSearchTerm }) {
     const [searchInput, setSearchInput] = useState("");
@@ -15,13 +15,33 @@ function Search({ setSearchTerm }) {
     }
 
     return (
-        <form className="search" onSubmit={handleSubmit}>
-            <label>Enter a search term:
-                <input type="text" onChange={handleChange} value={searchInput}></input>
-            </label>
-            <button>Search</button>
-
-        </form>
+        <Box component="form" onSubmit={handleSubmit} sx={{
+            width: '100%', width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            my: 3
+        }}>
+            <Box sx={{
+                display: "flex",
+                gap: 2,
+                width: '100%',
+                maxWidth: { xs: '100%', sm: '600px' }
+            }}>
+                <TextField
+                    onChange={handleChange}
+                    value={searchInput}
+                    fullWidth
+                    label="Enter movie name..."
+                    id="movie-search"
+                    variant="outlined"
+                    placeholder="Enter movie name..."
+                />
+                <Button type="submit" variant="contained" color="success">
+                    Search
+                </Button>
+            </Box>
+        </Box>
     )
 }
 
