@@ -3,16 +3,29 @@ import Header from './Header'
 import Search from './Search'
 import ContentList from './ContentList'
 import { Container, Box } from '@mui/material';
+import Sort from './Sort';
+
+
+
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("Girls")
+  const [searchTerm, setSearchTerm] = useState("")
 
+  const [movies, setMovies] = useState([])
+
+  const [originalItems] = useState([...movies]);
+  const resetMovies = () => {
+    setMovies([...originalItems]);
+  };
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
         <Header />
         <Search setSearchTerm={setSearchTerm} />
-        <ContentList searchTerm={searchTerm} />
+        <Sort movies={movies} setMovies={setMovies} resetMovies={resetMovies} />
+        <ContentList searchTerm={searchTerm} setMovies={setMovies} movies={movies} />
+
+
       </Box>
     </Container>
   )

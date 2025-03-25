@@ -4,9 +4,9 @@ import MovieCard from "./MovieCard";
 import { Box, Container } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
-function ContentList({ searchTerm }) {
+function ContentList({ searchTerm, setMovies, movies }) {
 
-    const [movies, setMovies] = useState([])
+
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
@@ -28,7 +28,6 @@ function ContentList({ searchTerm }) {
             setIsLoading(false)
         })
     }, [searchTerm]);
-
 
     if (isLoading) {
         return (

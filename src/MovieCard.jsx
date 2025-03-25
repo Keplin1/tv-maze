@@ -19,9 +19,6 @@ function MovieCard({ movie }) {
 
     // )
 
-
-
-
     return (
 
         <Card>
