@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 import { Box, Container } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
-function ContentList({ searchTerm, setMovies, movies }) {
+function ContentList({ searchTerm, setMovies, movies, setOriginalMovies }) {
 
 
     const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +21,9 @@ function ContentList({ searchTerm, setMovies, movies }) {
                 return Promise.reject({ message: 'Something went wrong' })
             }
 
-            setMovies(data)
+            setMovies(data);
+            setOriginalMovies(data)
+
         }).catch((err) => {
             setIsError(true)
         }).finally(() => {

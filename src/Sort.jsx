@@ -1,11 +1,18 @@
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
+
 import { useState } from "react";
-import { Select } from '@base-ui-components/react/select';
 const Sort = ({ setMovies, movies, resetMovies }) => {
 
     const [sortValue, setSort] = useState('')
 
     function handleSort(event) {
         event.preventDefault();
+        setSort(event.target.value)
 
 
         if (event.target.value === "none") {
@@ -56,16 +63,29 @@ const Sort = ({ setMovies, movies, resetMovies }) => {
 
 
     return (
-        <>
-            <label htmlFor="sort-selector">Select something</label>
-            <select id="sort-selector" name="choose-filter" onChange={handleSort} defaultValue={'none'}>
-                <option value='none'>None</option>
-                <option value='newest'>Newest Fist</option>
-                <option value='oldest'>Oldest First</option>
-                <option value='highest_rated'>Highest Rated</option>
-                <option value='lowest_rated'>Lowest Rated</option>
-            </select>
-        </>
+        <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth sx={{ fontSize: '18', fontWeight: '1000' }} >
+                <InputLabel id="sort-selector" sx={{ fontSize: '24', fontWeight: '1000' }}>Select Sort Value</InputLabel>
+                {/* <label htmlFor="sort-selector">Select something</label> */}
+
+                <Select
+                    labelId="sort-selector"
+                    id="demo-simple-select"
+                    value={sortValue}
+                    label="None"
+                    onChange={handleSort}
+                >
+                    {/* <select id="sort-selector" name="choose-filter" onChange={handleSort} defaultValue={'none'}> */}
+
+                    <MenuItem value={'none'}>None</MenuItem>
+                    <MenuItem value={'newest'}>Newest Fist</MenuItem>
+                    <MenuItem value={'oldest'}>Oldest First</MenuItem>
+                    <MenuItem value={'highest_rated'}>Highest Rated</MenuItem>
+                    <MenuItem value={'lowest_rated'}>Lowest Rated</MenuItem>
+
+                </Select>
+            </FormControl>
+        </Box>
     )
 
 }

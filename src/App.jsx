@@ -9,13 +9,13 @@ import Sort from './Sort';
 
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("Office")
 
   const [movies, setMovies] = useState([])
 
-  const [originalItems] = useState([...movies]);
+  const [originalMovies, setOriginalMovies] = useState([]);
   const resetMovies = () => {
-    setMovies([...originalItems]);
+    setMovies([...originalMovies]); // office 
   };
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
@@ -23,7 +23,7 @@ function App() {
         <Header />
         <Search setSearchTerm={setSearchTerm} />
         <Sort movies={movies} setMovies={setMovies} resetMovies={resetMovies} />
-        <ContentList searchTerm={searchTerm} setMovies={setMovies} movies={movies} />
+        <ContentList searchTerm={searchTerm} setMovies={setMovies} movies={movies} setOriginalMovies={setOriginalMovies} />
 
 
       </Box>

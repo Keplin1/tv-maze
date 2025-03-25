@@ -35,7 +35,8 @@ function MovieCard({ movie }) {
                         {movie.show.name}
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        {movie.show.genres.join(', ')}
+                        {movie.show.genres && movie.show.genres.length > 0 ? movie.show.genres.join(', ') : 'Genre: unknown'}
+
                     </Typography>
                 </CardContent>
             </CardActionArea>
