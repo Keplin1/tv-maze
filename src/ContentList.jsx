@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import Grid from '@mui/material/Grid2';
+import { Link } from "react-router-dom";
 
 function ContentList({ searchTerm, setMovies, movies, setOriginalMovies }) {
 
@@ -22,6 +23,7 @@ function ContentList({ searchTerm, setMovies, movies, setOriginalMovies }) {
             }
 
             setMovies(data);
+            console.log(data)
             setOriginalMovies(data)
 
         }).catch((err) => {
@@ -54,27 +56,14 @@ function ContentList({ searchTerm, setMovies, movies, setOriginalMovies }) {
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {movies.map((movie) => (
                     <Grid key={movie.show.id} size={{ xs: 2, sm: 4, md: 4 }}>
-                        <MovieCard sx={{ height: '150%', boxSizing: 'border-box' }} movie={movie} />
+                        <Link to={`/shows/${movie.show.id}`}>
+                            <MovieCard sx={{ height: '150%', boxSizing: 'border-box' }} movie={movie} />
+                        </Link>
                     </Grid>
                 ))}
             </Grid>
         </Box>
 
-
-
-        // sx={{
-        //         display: "flex", flexDirection: 'row', flexWrap: 'wrap', flexFlow: 'column-row', justifyContent: 'space-around', alignItems: 'baseline', rowGap: '10px',
-        //             columnGap: '20px'
-        // }}
-
-        // <div className="content-list">
-        //     <h2>Movie list</h2>
-        //     {movies.map((movie) => {
-
-        //         return <MovieCard key={movie.show.id} movie={movie} />
-        //     })}
-
-        // </div>
 
     )
 }

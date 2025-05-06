@@ -9,16 +9,6 @@ import CardActionArea from '@mui/material/CardActionArea';
 
 function MovieCard({ movie }) {
 
-    // return (
-
-    //     <li className="content-card">
-    //         <h3>{movie.show.name}</h3>
-    //         <p>genre: {movie.show.genres}</p>
-    //         <img src={movie.show.image?.medium} alt={movie.show.name} />
-    //     </li>
-
-    // )
-
     return (
 
         <Card>

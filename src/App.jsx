@@ -5,6 +5,9 @@ import ContentList from './ContentList'
 import { Container, Box } from '@mui/material';
 import Sort from './Sort';
 import FullSchedule from './FullSchedule';
+import { Routes, Route } from "react-router-dom";
+import SingleMoviePage from './SingleMoviePage';
+
 
 
 
@@ -25,6 +28,8 @@ function App() {
         <Search setSearchTerm={setSearchTerm} />
         <Sort movies={movies} setMovies={setMovies} resetMovies={resetMovies} />
         <ContentList searchTerm={searchTerm} setMovies={setMovies} movies={movies} setOriginalMovies={setOriginalMovies} />
+
+
         <FullSchedule />
 
 
