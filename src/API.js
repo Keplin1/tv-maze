@@ -9,3 +9,10 @@ export const getMovieById = (show_id) => {
         return data
     })
 }
+
+export const getCastById = (show_id) => {
+
+    return newApi.get(`/shows/${show_id}/cast`).then(({ data }) => {
+        return data
+    })
+}

@@ -66,7 +66,6 @@ const Sort = ({ setMovies, movies, resetMovies }) => {
         <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth sx={{ fontSize: '18', fontWeight: '1000' }} >
                 <InputLabel id="sort-selector" sx={{ fontSize: '24', fontWeight: '1000' }}>Select Sort Value</InputLabel>
-                {/* <label htmlFor="sort-selector">Select something</label> */}
 
                 <Select
                     labelId="sort-selector"
@@ -75,7 +74,7 @@ const Sort = ({ setMovies, movies, resetMovies }) => {
                     label="None"
                     onChange={handleSort}
                 >
-                    {/* <select id="sort-selector" name="choose-filter" onChange={handleSort} defaultValue={'none'}> */}
+
 
                     <MenuItem value={'none'}>None</MenuItem>
                     <MenuItem value={'newest'}>Newest Fist</MenuItem>
