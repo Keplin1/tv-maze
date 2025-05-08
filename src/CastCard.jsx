@@ -1,12 +1,12 @@
 import * as React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
-import Avatar from '@mui/joy/Avatar';
+
 import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Link from '@mui/joy/Link';
-
+import silly_dog_img from '../src/assets/silly_dog.jpg'
 
 const CastCard = ({ castMember }) => {
     return (
@@ -67,7 +67,7 @@ const CastCard = ({ castMember }) => {
                     >
                         <img
                             alt=""
-                            src={castMember.person.image.original}
+                            src={castMember.person.image?.original ?? silly_dog_img}
                         />
                     </AspectRatio>
                     <Box sx={{ display: 'flex', gap: 1.5, mt: 'auto' }}>
