@@ -7,7 +7,7 @@ import Sort from './Sort';
 import FullSchedule from './FullSchedule';
 import { Routes, Route } from "react-router-dom";
 import SingleMoviePage from './SingleMoviePage';
-
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 
 
